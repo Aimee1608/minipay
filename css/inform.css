@@ -1,0 +1,350 @@
+/************�������ݱ���ͼ**************/
+.box {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+.bg {
+  width: 10rem;
+  height: 10.10666667rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.logo {
+  width: 1.94666667rem;
+  height: 0.85333333rem;
+  position: absolute;
+  top: 0.05333333rem;
+  left: 0 ;
+}
+.title {
+  width: 100%;
+  height: 1.13333333rem;
+  position: absolute;
+  top: 10.10666667rem;
+  left: 0 ;
+}
+/***********************�?**********************/
+#userEnd ul {
+  list-style: none;
+}
+#userEnd input,
+select {
+  border: 0 outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.userEnd {
+  width: 100%;
+  height: 5.33333333rem;
+  position: absolute;
+  top: 11.33333333rem;
+  left: 0;
+}
+.userInfo-box {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 7.33333333rem;
+  height: 5.33333333rem;
+  position: absolute;
+  left: 1.33333333rem;
+}
+.userInfo-box .input-form {
+  box-sizing: border-box;
+  width: 100%;
+}
+.userInfo-box .input-form li {
+  box-sizing: border-box;
+  width: 100%;
+  height: 0.69333333rem;
+  margin-bottom: 0.24rem;
+  font-size: 0.32rem;
+  position: relative;
+}
+.userInfo-box .input-form li em.select-icon {
+  width: 0.21333333rem;
+  height: 0.16rem;
+  background: #666;
+  -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  position: absolute;
+  right: 0.16rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+}
+.userInfo-box .input-form li span {
+  color: #fff;
+  position: absolute;
+  left: -1px;
+  font-size: 0.32rem;
+  width: 1.49333333rem;
+  height: 0.69333333rem;
+  line-height: 0.69333333rem;
+  text-align: center;
+  background: #59595a;
+  letter-spacing: 2px;
+}
+.userInfo-box .input-form li span.longspan {
+  width: 2.4rem;
+  letter-spacing: 1.5px;
+}
+.userInfo-box .input-form li input {
+  padding-left: 1.73333333rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 0.32rem;
+  border-radius: 0;
+  border: 0;
+  background: #f2f2f2;
+}
+.userInfo-box .input-form li input.inputerror {
+  background: rgba(255, 231, 147, 0.8);
+}
+.userInfo-box .input-form li select {
+  float: right;
+  padding-left: 1.73333333rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 0.32rem;
+  border-radius: 0;
+  color: #999;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 0.4rem;
+  background: #f2f2f2;
+  border: 0;
+}
+.userInfo-box .input-form li select.longselect {
+  padding-left: 2.46666667rem;
+  background: #f2f2f2;
+}
+.userInfo-box .input-form li select.changed {
+  color: #333;
+}
+.userInfo-box .input-form li.province-city {
+  border: 0;
+  width: 100%;
+}
+.userInfo-box .input-form li.province-city select.ddlProvince {
+  float: left;
+  box-sizing: border-box;
+  padding-left: 0.10666667rem;
+  width: 3.46666667rem;
+  height: 0.69333333rem;
+  background: #f2f2f2;
+}
+.userInfo-box .input-form li.province-city select.ddlCity {
+  padding-left: 0.10666667rem;
+  float: right;
+  box-sizing: border-box;
+  width: 3.46666667rem;
+  height: 0.69333333rem;
+  background: #f2f2f2;
+}
+.userInfo-box .input-form li.province-city em.select-province {
+  left: 3.05333333rem;
+}
+.userInfo-box .input-form li.province-city:after {
+  content: '';
+  display: none;
+  clear: both;
+}
+.userInfo-box .btn-userInfo {
+  box-sizing: border-box;
+  width: 3.77333333rem;
+  height: 0.69333333rem;
+  line-height: 0.69333333rem;
+  top: 3.73333333rem;
+  left: 1.74rem;
+  position: absolute;
+  background: #59595a;
+  animation: joinClick 4s ease infinite;
+  -webkit-animation: joinClick 4s ease infinite;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.34666667rem;
+}
+.userInfo {
+  text-align: left;
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+@keyframes joinClick {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  2.5%,
+  5% {
+    -webkit-transform: scale(0.95) rotate3d(0, 0, 1, -2deg);
+    transform: scale(0.95) rotate3d(0, 0, 1, -2deg);
+  }
+  12.5%,
+  17.5%,
+  22.5%,
+  7.5% {
+    -webkit-transform: scale(1.15) rotate3d(0, 0, 1, 2deg);
+    transform: scale(1.15) rotate3d(0, 0, 1, 2deg);
+  }
+  10%,
+  15%,
+  20% {
+    -webkit-transform: scale(1.15) rotate3d(0, 0, 1, -2deg);
+    transform: scale(1.15) rotate3d(0, 0, 1, -2deg);
+  }
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes joinClick {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  2.5%,
+  5% {
+    -webkit-transform: scale(0.95) rotate3d(0, 0, 1, -2deg);
+    transform: scale(0.95) rotate3d(0, 0, 1, -2deg);
+  }
+  12.5%,
+  17.5%,
+  22.5%,
+  7.5% {
+    -webkit-transform: scale(1.1) rotate3d(0, 0, 1, 2deg);
+    transform: scale(1.1) rotate3d(0, 0, 1, 2deg);
+  }
+  10%,
+  15%,
+  20% {
+    -webkit-transform: scale(1.1) rotate3d(0, 0, 1, -2deg);
+    transform: scale(1.1) rotate3d(0, 0, 1, -2deg);
+  }
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.alertBox {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(76, 76, 76, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.error {
+  z-index: 100;
+}
+.success {
+  background-color: transparent;
+  z-index: 101;
+}
+.repace {
+  z-index: 102;
+}
+.repaceagain {
+  z-index: 103;
+}
+.alert {
+  width: 6.66666667rem;
+  height: 3.41666667rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn-userInfo {
+  opacity: 1;
+}
+.btn-move {
+  -webkit-animation: buttonTada 4s ease infinite;
+  animation: buttonTada 4s ease infinite;
+}
+@keyframes buttonTada {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  2.5%,
+  5% {
+    -webkit-transform: scale(0.95) rotate3d(0, 0, 1, -0.5deg);
+    transform: scale(0.95) rotate3d(0, 0, 1, -0.5deg);
+  }
+  12.5%,
+  17.5%,
+  22.5%,
+  7.5% {
+    -webkit-transform: scale(1.05) rotate3d(0, 0, 1, 0.5deg);
+    transform: scale(1.05) rotate3d(0, 0, 1, 0.5deg);
+  }
+  10%,
+  15%,
+  20% {
+    -webkit-transform: scale(1.05) rotate3d(0, 0, 1, -0.5deg);
+    transform: scale(1.05) rotate3d(0, 0, 1, -0.5deg);
+  }
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes buttonTada {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  2.5%,
+  5% {
+    -webkit-transform: scale(0.95) rotate3d(0, 0, 1, -0.5deg);
+    transform: scale(0.95) rotate3d(0, 0, 1, -0.5deg);
+  }
+  12.5%,
+  17.5%,
+  22.5%,
+  7.5% {
+    -webkit-transform: scale(1.05) rotate3d(0, 0, 1, 0.5deg);
+    transform: scale(1.05) rotate3d(0, 0, 1, 0.5deg);
+  }
+  10%,
+  15%,
+  20% {
+    -webkit-transform: scale(1.05) rotate3d(0, 0, 1, -0.5deg);
+    transform: scale(1.05) rotate3d(0, 0, 1, -0.5deg);
+  }
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

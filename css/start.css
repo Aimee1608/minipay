@@ -1,0 +1,72 @@
+.startBox {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  position: relative;
+}
+.startBox .bg {
+  width: 10rem;
+  height: 10.10666667rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.startBox .logo {
+  width: 1.94666667rem;
+  height: 0.85333333rem;
+  position: absolute;
+  top: 0.05333333rem;
+  left: 0 ;
+}
+.startBox .goInform,
+.startBox .goBuy,
+.startBox .goLogin {
+  width: 5.70666667rem;
+  height: 1.01333333rem;
+  position: relative;
+  top: 11.17333333rem;
+  margin: 0 auto;
+  margin-bottom: 0.33333333rem;
+}
+.startBox .goInform a img,
+.startBox .goBuy a img,
+.startBox .goLogin a img {
+  width: 100%;
+  height: 100%;
+}
+.startBox .huodong {
+  font-size: 0.34666667rem;
+  color: #ad5a47;
+  position: absolute;
+  top: 15.46666667rem;
+  right: 0.53333333rem;
+  padding-bottom: 1.06666667rem;
+}
+.details {
+  background: #333333;
+  opacity: 1;
+  z-index: 99;
+  display: none;
+  width: 100%;
+  height: 19.33333333rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  overflow: hidden;
+  -webkit-overflow: hidden;
+}
+.close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 0.53333333rem;
+  height: 0.53333333rem;
+}
+.guize {
+  width: 10rem;
+  height: 14.66666667rem;
+  left: 0;
+  top: 0.8rem;
+  position: absolute;
+}

@@ -1,0 +1,361 @@
+/************�������ݱ���ͼ**************/
+.box {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+}
+.bg{
+    width: 750/75rem; height: 758/75rem;position: absolute;left: 0;top: 0;
+}
+.logo{width: 146/75rem;height: 64/75rem;position: absolute;top: 4/75rem;left:0 ;}
+.title{
+    width: 100%;height: 85/75rem;position: absolute;top: 758/75rem; left:0 ;
+}
+/***********************�?**********************/
+#userEnd ul {
+    list-style: none;
+}
+#userEnd input,
+select {
+    border:0 outline: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+.userEnd {
+    width: 100%;
+    height: 400/75rem;
+    position: absolute;
+    top: 850/75rem;
+    left: 0;
+}
+.userInfo-box {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 550/75rem;
+    height: 400/75rem;
+    position: absolute;
+    left: 100/75rem;
+    .input-form {
+        box-sizing: border-box;
+        width: 100%;
+        li.red {
+            //      border: 1px solid #c01c1c;
+        }
+        li {
+            box-sizing: border-box;
+            //      border: 1px solid #A0A0A0;
+            width: 100%;
+            height: 52/75rem;
+            margin-bottom: 18/75rem;
+            font-size: 24/75rem;
+            position: relative;
+            em.select-icon {
+                width: 16/75rem;
+                height: 12/75rem;
+                background: #666;
+                -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+                clip-path: polygon(50% 100%, 0 0, 100% 0);
+                position: absolute;
+                right: 12/75rem;
+                top: 50%;
+                transform: translate(0,-50%);
+                -webkit-transform: translate(0,-50%);
+            }
+            span {
+                color: #fff;
+                position: absolute;
+                left: -1px;
+                font-size: 24/75rem;
+                //        top: -1px;
+                width: 112/75rem;
+                height: 52/75rem;
+                line-height: 52/75rem;
+                text-align: center;
+                background: #59595a;
+                letter-spacing: 2px;
+            }
+            span.longspan {
+                width: 180/75rem;
+                letter-spacing: 1.5px;
+            }
+            input {
+                padding-left: 130/75rem;
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                font-size: 24/75rem;
+                border-radius: 0;
+                border: 0;
+                background: #f2f2f2;
+            }
+            input.inputerror {
+                background: rgba(255,231,147,0.8);
+            }
+            select {
+                float: right;
+                padding-left: 130/75rem;
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                font-size: 24/75rem;
+                border-radius: 0;
+                color: #999;
+                letter-spacing: 1px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-right: 30/75rem;
+                background: #f2f2f2;
+                border: 0;
+            }
+            select.longselect {
+                padding-left: 185/75rem;
+                background: #f2f2f2;
+            }
+            select.changed {
+                color: #333;
+            }
+        }
+        li.province-city {
+            border: 0;
+            width: 100%;
+            select.ddlProvince {
+                float: left;
+                box-sizing: border-box;
+                padding-left: 8/75rem;
+                width: 260/75rem;
+                height: 52/75rem;
+                background: #f2f2f2;
+            }
+            select.ddlCity {
+                padding-left: 8/75rem;
+                float: right;
+                box-sizing: border-box;
+                width: 260/75rem;
+                height: 52/75rem;
+                //        border: 1px solid #A0A0A0;
+                background: #f2f2f2;
+            }
+            em.select-province {
+                left: 229/75rem;
+            }
+        }
+        li.province-city:after {
+            content: '';
+            display: none;
+            clear: both;
+        }
+    }
+    .btn-userInfo {
+        box-sizing: border-box;
+        width: 283/75rem;
+        height: 52/75rem;
+        line-height: 52/75rem;
+        top: 280/75rem;
+        left: 130.5/75rem;
+        position: absolute;
+        background: #59595a;
+        animation: joinClick 4s ease infinite;
+        -webkit-animation: joinClick 4s ease infinite;
+        letter-spacing: 3px;
+        text-align: center;
+        color: #fff;
+        font-size: 26/75rem;
+    }
+}
+.userInfo {
+    text-align: left;
+    display: none;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+@keyframes joinClick {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    2.5%,
+    5% {
+        -webkit-transform: scale(.95) rotate3d(0, 0, 1, -2deg);
+        transform: scale(.95) rotate3d(0, 0, 1, -2deg);
+    }
+
+    12.5%,
+    17.5%,
+    22.5%,
+    7.5% {
+        -webkit-transform: scale(1.15) rotate3d(0, 0, 1, 2deg);
+        transform: scale(1.15) rotate3d(0, 0, 1, 2deg);
+    }
+
+    10%,
+    15%,
+    20% {
+        -webkit-transform: scale(1.15) rotate3d(0, 0, 1, -2deg);
+        transform: scale(1.15) rotate3d(0, 0, 1, -2deg);
+    }
+    25% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes joinClick {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    2.5%,
+    5% {
+        -webkit-transform: scale(.95) rotate3d(0, 0, 1, -2deg);
+        transform: scale(.95) rotate3d(0, 0, 1, -2deg);
+    }
+
+    12.5%,
+    17.5%,
+    22.5%,
+    7.5% {
+        -webkit-transform: scale(1.1) rotate3d(0, 0, 1, 2deg);
+        transform: scale(1.1) rotate3d(0, 0, 1, 2deg);
+    }
+
+    10%,
+    15%,
+    20% {
+        -webkit-transform: scale(1.1) rotate3d(0, 0, 1, -2deg);
+        transform: scale(1.1) rotate3d(0, 0, 1, -2deg);
+    }
+    25% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.alertBox {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(76,76,76,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.error {
+    z-index: 100;
+}
+.success {
+    background-color: transparent;
+    z-index: 101;
+}
+.repace {
+    z-index: 102;
+}
+.repaceagain {
+    z-index: 103;
+}
+
+.alert {
+    width: 400/60rem;
+    height: 205/60rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.btn-userInfo {
+    opacity: 1;
+}
+.btn-move {
+    -webkit-animation: buttonTada 4s ease infinite;
+    animation: buttonTada 4s ease infinite;
+}
+@keyframes buttonTada {
+    //loading��ʼСͼ��
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    2.5%,
+    5% {
+        -webkit-transform: scale(.95) rotate3d(0, 0, 1, -0.5deg);
+        transform: scale(.95) rotate3d(0, 0, 1, -0.5deg);
+    }
+
+    12.5%,
+    17.5%,
+    22.5%,
+    7.5% {
+        -webkit-transform: scale(1.05) rotate3d(0, 0, 1, 0.5deg);
+        transform: scale(1.05) rotate3d(0, 0, 1, 0.5deg);
+    }
+
+    10%,
+    15%,
+    20% {
+        -webkit-transform: scale(1.05) rotate3d(0, 0, 1, -0.5deg);
+        transform: scale(1.05) rotate3d(0, 0, 1, -0.5deg);
+    }
+    25% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes buttonTada {
+    //loading��ʼСͼ��
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    2.5%,
+    5% {
+        -webkit-transform: scale(.95) rotate3d(0, 0, 1, -0.5deg);
+        transform: scale(.95) rotate3d(0, 0, 1, -0.5deg);
+    }
+
+    12.5%,
+    17.5%,
+    22.5%,
+    7.5% {
+        -webkit-transform: scale(1.05) rotate3d(0, 0, 1, 0.5deg);
+        transform: scale(1.05) rotate3d(0, 0, 1, 0.5deg);
+    }
+
+    10%,
+    15%,
+    20% {
+        -webkit-transform: scale(1.05) rotate3d(0, 0, 1, -0.5deg);
+        transform: scale(1.05) rotate3d(0, 0, 1, -0.5deg);
+    }
+    25% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>新年新愿望 MINI礼从天降</title>
+	<meta name="description" content="至高直降3万，要买车的是时候出手了!" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,shrink-to-fit=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta name="msapplication-tap-highlight" content="no">
+	<link rel="stylesheet" type="text/css" href="js/bomebox/css/global.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/buy.css"/>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/init.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		/** 判断是否微信浏览器打开 **/
+		var opendID = GetQueryString('opendID');
+
+		var _isweixin = isWeiXin(); //获取浏览渠道
+
+		if(_isweixin == true && opendID == null) {
+			// alert(initUrl + 'weixinOauther?url=' + url);
+			window.location.href = initUrl + 'weixinOauther';
+
+		}
+	</script>
+</head>
+<body>
+<img src="img/share.jpg" alt="" style="position:absolute;left:0;top:0;visibility: hidden"/>
+<div class="pbox">
+	<img src="img/bg.png" class="bg"/>
+	<img src="img/logo.png" class="logo"/>
+	<!--支付页面-->
+	<div class="paymentBox">
+		<img src="img/order.png" class="paytitle02"/>
+		<img src="img/pay.png" class="paytitle"/>
+				<div class="content">
+				        <ul class="informRight">
+				            <li class="li">姓名:<span class="li" id="telname"></span></li>
+				            <li class="li">电话:<span class="li" id="telphone"></span></li>
+				            <li class="li">选择城市:<span class="li" id="city_name"></span></li>
+				            <li class="li">经销商:<span class="li" id="dealer_name"></span></li>
+				            <li class="li">车型:<span class="li" id="car_type"></span></li>
+				            <li class="li">外观颜色:<span class="li" id="apper_color"></span></li>
+				            <li class="li">内饰:<span id="interior"></span></li>
+				        </ul>
+				        <div class="interPay" id="payType">
+				            <ul class="payment01">
+				                <li>
+									<input type="radio" id="zhifubao" value="pay.alipay.h5" name="payment"  runat="server" checked="checked"/><label for="zhifubao"></label><img src="img/zhifubao.png"/>
+								</li>
+								<li>
+									<input type="radio" id="wechat" value="pay.wechat.h5" name="payment" /><label for="wechat"></label><img src="img/weixin.png"/>
+								</li>
+				            </ul>
+							<ul class="payment02" style="display:none">
+								<li>
+									<input type="radio" id="wechatapp" checked="" value="pay.wechat.wap" name="payment02" /><label for="wechat"></label><img src="img/weixinpay.png"/>
+								</li>
+							</ul>
+        				</div>
+						<p class="tip">*如下单后5分钟仍未支付订单，将自动释放库存*</p>
+						<div class="goRealPay"><!-- 订单详情确认 --></div>
+			    </div>
+
+			    <div id="payHtmlCode"><!-- 第三发脚本代码 DOM --></div>
+	</div>
+</div>
+<!--弹框-->
+<div class="loading">
+	<!--<img src="img/ajax-loader.gif" />-->
+	<div class="sk-circle">
+		<div class="sk-circle1 sk-child"></div>
+		<div class="sk-circle2 sk-child"></div>
+		<div class="sk-circle3 sk-child"></div>
+		<div class="sk-circle4 sk-child"></div>
+		<div class="sk-circle5 sk-child"></div>
+		<div class="sk-circle6 sk-child"></div>
+		<div class="sk-circle7 sk-child"></div>
+		<div class="sk-circle8 sk-child"></div>
+		<div class="sk-circle9 sk-child"></div>
+		<div class="sk-circle10 sk-child"></div>
+		<div class="sk-circle11 sk-child"></div>
+		<div class="sk-circle12 sk-child"></div>
+	</div>
+</div>
+</body>
+
+<!-- 弹框Js -->
+<script type="text/javascript" src="js/bomebox/js/windowOpen.js"></script>
+<script type="text/javascript">
+
+$(function() {
+
+	if(_isweixin == true){
+		$('.payment02').show();
+		$('.payment01').hide();
+	}else{
+		$('.payment02').hide();
+		$('.payment01').show();
+	}
+	var payagain = GetQueryString('pay');
+	/** 1. 首先获取用户信息 **/
+	var order_code = GetQueryString('order_code');
+	var user_code = GetQueryString('user_code');
+	if(payagain==1){
+		$('.paytitle').show();
+		$('.paytitle02').hide();
+	}else{
+		$('.paytitle02').show();
+		$('.paytitle').hide();
+	}
+	$.ajax({ //获取用户信息
+		type:'post',
+		url: initUrl + 'getOrderDetail',
+		data:{user_code:user_code,order_code:order_code},
+		dataType:'json',
+		success:function(msg){
+			console.log(msg);
+			if(msg.code == 1001) {
+				/** 下单详情进行赋值确认 **/
+				$('#apper_color').html(msg.data.apper_color);
+				$('#telname').html(msg.data.name);
+				$('#telphone').html(msg.data.phone);
+				$('#city_name').html(msg.data.city_name);
+				$('#dealer_name').html(msg.data.dealer_name);
+				$('#car_type').html(msg.data.car_type);
+				$('#interior').html(msg.data.interior);
+			} else {
+				// alert("获取订单详情失败");
+				winBombBox("提示","获取订单详情失败","确定");
+			}
+		},
+		error:function() {
+			winBombBox("提示","网络异常","确定");
+		}
+	});
+
+	/** 2. 开始请求第三发去支付 **/
+	$('.goRealPay').click(function() {
+//		window.location.href = localStorage.getItem("backurl");
+		if(_isweixin){
+			var payvalue = $('input[name="payment02"]:checked').val(); //支付方式
+		}else{
+			var payvalue = $('input[name="payment"]:checked').val(); //支付方式
+		}
+		$('.loading').show();
+		var postData = {
+				pay_channel: payvalue, //支付方式
+				user_code: user_code, //用户编号
+				order_code: order_code, //订单编号
+				openid: opendID //用户openid
+		};
+//		alert(payvalue);
+		var atime = 0;
+		payFun();
+		function payFun(){
+			$.ajax({
+				type: 'get',
+				url: initUrl + 'PayMentContart',
+				data: postData,
+				dataType: 'json',
+				success: function(msg) {
+					// alert(msg.code);
+					localStorage.setItem('token',msg.token);
+					if(msg.code == 1001) {
+						var time = setTimeout(function(){
+							$('.loading').hide();
+//							$("#payHtmlCode").html(msg.dataHtml);
+							 document.getElementById('payHtmlCode').innerHTML = msg.dataHtml; //先进行赋值
+							 var xmlHttp = document.getElementById("payHtmlCode").innerHTML; //然后进行获取html脚本代码
+							 executeScript(xmlHttp); //开始过滤进行运行
+							clearTimeout(time);
+						},500);
+
+
+					} else if(msg.code == 2001) { //库存不足
+						$('.loading').hide();
+						if(payagain==1){
+							var inner = "已售罄,返回重新选择";
+							var url = "buy.html";
+						}else{
+							var inner = "已售罄,返回列表页";
+							var url = "orderInfo.html?user_code="+user_code;
+						}
+						$(this).openWindow("提示",inner,['确定'],function(result){
+							console.log(result);
+							if(result=='确定'){
+								window.location.href = url;//刷新返回上一页
+							}
+						})
+
+					} else if(msg.code == 2002) {
+						$('.loading').hide();
+						winBombBox("提示","该订单已经支付","确定");
+					} else if(msg.code == 2003) {//再次请求支付接口
+						$('.loading').hide();
+						atime++;
+						if(atime>=3){
+							winBombBox("提示","支付失败","确定");
+						}else{
+							payFun();
+						}
+					}else{
+						$('.loading').hide();
+						winBombBox("提示","网络异常,请重试！","确定");
+					}
+				},
+				error: function(msg) {
+					$('.loading').hide();
+					winBombBox("提示","网络异常,请稍后重试！","确定");
+				}
+			});
+
+		}
+
+	});
+
+});
+</script>
+
+</html>
